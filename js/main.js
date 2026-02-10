@@ -92,16 +92,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Project read more
+    // Project read more (accordion per card, tanpa mengubah layout card lain)
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const detailsCloseBtns = document.querySelectorAll('.details-close-btn');
     
     readMoreBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const projectCard = this.closest('.project-card');
             const details = projectCard.querySelector('.project-details');
+            const isCurrentlyActive = details.classList.contains('active');
             
-            details.classList.toggle('active');
-            this.textContent = details.classList.contains('active') ? 'Read Less' : 'Read More';
+            // Tutup hanya card lain yang sedang aktif
+            projectCards.forEach(card => {
+                if (card === projectCard) return;
+                
+                const cardDetails = card.querySelector('.project-details');
+                const cardBtn = card.querySelector('.read-more-btn');
+                
+                if (cardDetails && cardDetails.classList.contains('active')) {
+                    cardDetails.classList.remove('active');
+                    if (cardBtn) {
+                        cardBtn.textContent = 'Read More';
+                    }
+                }
+            });
+            
+            // Toggle card yang diklik
+            if (isCurrentlyActive) {
+                details.classList.remove('active');
+                this.textContent = 'Read More';
+            } else {
+                details.classList.add('active');
+                this.textContent = 'Read Less';
+            }
+        });
+    });
+
+    // Tombol close di dalam overlay deskripsi
+    detailsCloseBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const projectCard = this.closest('.project-card');
+            const details = projectCard.querySelector('.project-details');
+            const readMoreBtn = projectCard.querySelector('.read-more-btn');
+            
+            if (details && details.classList.contains('active')) {
+                details.classList.remove('active');
+            }
+            
+            if (readMoreBtn) {
+                readMoreBtn.textContent = 'Read More';
+            }
         });
     });
     
