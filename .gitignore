@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.log
+*.tmp
+
+# Original assets (keep only optimized versions)
+ASSET*/
+sertifikat/
+Artikel-blog/
+
+# Build files
+dist/
+build/
