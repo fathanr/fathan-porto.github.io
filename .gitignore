@@ -16,8 +16,12 @@ Thumbs.db
 *.log
 *.tmp
 
-# Original assets (keep only optimized versions)
-ASSET*/
+# Original source assets (keep only optimized versions in assets/)
+ASSET MINDID/
+ASSET MOUNTSEERAH/
+ASSET PERTAMINA/
+ASSET PAMAFIX/
+ASSET PAMAFIX SAP/
 sertifikat/
 Artikel-blog/
 
