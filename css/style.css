@@ -41,7 +41,25 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: #f5f5f5;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse 800px 600px at 20% 10%, rgba(255, 193, 7, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 600px 800px at 80% 30%, rgba(255, 193, 7, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse 700px 500px at 50% 60%, rgba(255, 193, 7, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse 500px 700px at 10% 80%, rgba(255, 193, 7, 0.25) 0%, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .container {
@@ -76,10 +94,11 @@ a:hover {
 
 section {
     padding: var(--spacing-xl) 0;
+    position: relative;
 }
 
 section:nth-child(even) {
-    background-color: var(--bg-light);
+    background-color: transparent;
 }
 
 header {
@@ -87,7 +106,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--bg-color);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -105,6 +125,13 @@ header {
     font-size: var(--font-size-xl);
     font-weight: 700;
     color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo svg {
+    flex-shrink: 0;
 }
 
 .nav-menu {
@@ -149,36 +176,115 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-color) 100%);
-    margin-top: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    margin-top: 0;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gradient-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #4facfe;
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: #00f2fe;
+    bottom: -10%;
+    right: -10%;
+    animation-delay: 7s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    background: #43e97b;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 14s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
     font-size: var(--font-size-3xl);
-    color: var(--primary-color);
+    color: #ffffff;
     margin-bottom: var(--spacing-sm);
 }
 
+.highlight-name {
+    color: #ffd700;
+    font-weight: 700;
+}
+
 .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero-description {
     font-size: var(--font-size-lg);
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-lg);
 }
 
 .cta-button {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-lg);
-    background-color: var(--secondary-color);
-    color: var(--bg-color);
-    border-radius: 4px;
+    background-color: #ffffff;
+    color: #667eea;
+    border-radius: 8px;
     font-weight: 600;
     transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
+    background-color: #ffd700;
+    color: #667eea;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .about {
