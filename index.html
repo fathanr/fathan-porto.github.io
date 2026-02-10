@@ -236,6 +236,8 @@
                 src="assets/images/mindid/screencapture-career-mind-id-2026-01-28-17_42_25.png"
                 alt="Mind ID Recruitment Portal"
                 loading="lazy"
+                class="project-thumbnail"
+                data-project="mindid"
               />
               <div class="project-content">
                 <h3>Mind ID Recruitment Portal</h3>
@@ -244,7 +246,10 @@
                   Web-based application supporting end-to-end job application
                   process with backoffice management for HR teams.
                 </p>
-                <button class="read-more-btn">Read More</button>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="mindid">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
                 <div class="project-details">
                   <p>
                     <strong>Leadership Role:</strong> Led quality assurance
@@ -277,6 +282,8 @@
                 src="assets/images/mountseerah/screencapture-mountserrah-app-codespace-id-2026-01-28-12_23_43.png"
                 alt="Mountseerah Learning Platform"
                 loading="lazy"
+                class="project-thumbnail"
+                data-project="mountseerah"
               />
               <div class="project-content">
                 <h3>Mountseerah</h3>
@@ -285,7 +292,10 @@
                   Student learning platform with interactive quizzes and
                   gamified rewards system.
                 </p>
-                <button class="read-more-btn">Read More</button>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="mountseerah">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
                 <div class="project-details">
                   <p>
                     Mountseerah is a web-based student application combined with
@@ -313,6 +323,8 @@
                 src="assets/images/pertamina/Pertamina Doc. Gen - dashboard.png"
                 alt="Pertamina Procurement System"
                 loading="lazy"
+                class="project-thumbnail"
+                data-project="pertamina"
               />
               <div class="project-content">
                 <h3>Pertamina Procurement</h3>
@@ -321,7 +333,10 @@
                   Procurement application with Office 365 integration for
                   automated digital signing.
                 </p>
-                <button class="read-more-btn">Read More</button>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="pertamina">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
                 <div class="project-details">
                   <p>
                     This web-based procurement application was developed to
@@ -349,6 +364,8 @@
                 src="assets/images/pamafix/pamafix-1.jpg"
                 alt="Pamafix Finance Application"
                 loading="lazy"
+                class="project-thumbnail"
+                data-project="pamafix"
               />
               <div class="project-content">
                 <h3>Pamafix</h3>
@@ -357,7 +374,10 @@
                   Enterprise finance application with microservices
                   architecture.
                 </p>
-                <button class="read-more-btn">Read More</button>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="pamafix">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
                 <div class="project-details">
                   <p>
                     Pamafix is an enterprise finance application designed to
@@ -386,6 +406,8 @@
                 src="assets/images/pamafix-sap/login-page.jpg"
                 alt="Pamafix SAP"
                 loading="lazy"
+                class="project-thumbnail"
+                data-project="pamafix-sap"
               />
               <div class="project-content">
                 <h3>Pamafix SAP</h3>
@@ -394,7 +416,10 @@
                   Enterprise finance application with SAP integration and
                   modular architecture.
                 </p>
-                <button class="read-more-btn">Read More</button>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="pamafix-sap">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
                 <div class="project-details">
                   <p>
                     <strong>Leadership Role:</strong> Led quality assurance team
@@ -539,7 +564,24 @@
       ↑
     </button>
 
+    <!-- Image Gallery Modal -->
+    <div id="imageModal" class="modal">
+      <span class="modal-close">&times;</span>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle"></h3>
+        </div>
+        <div class="modal-body">
+          <button class="modal-nav prev" aria-label="Previous image">&#10094;</button>
+          <img id="modalImage" src="" alt="">
+          <button class="modal-nav next" aria-label="Next image">&#10095;</button>
+        </div>
+        <div class="modal-thumbnails" id="modalThumbnails"></div>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
     <script src="js/filter.js"></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>
