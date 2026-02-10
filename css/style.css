@@ -593,13 +593,6 @@ header {
     max-height: 1000px;
 }
 
-.github-link {
-    display: inline-block;
-    margin-top: var(--spacing-sm);
-    color: var(--secondary-color);
-    font-weight: 600;
-}
-
 .blog h2 {
     text-align: center;
     color: var(--primary-color);
