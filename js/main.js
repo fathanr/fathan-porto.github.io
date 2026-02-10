@@ -1,5 +1,8 @@
 // Smooth Scrolling Navigation
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init('jS774oyqSbaXYSjWm');
+    
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -161,16 +164,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (isValid) {
-            formStatus.textContent = 'Message sent successfully! (Note: Form submission not yet connected to backend)';
-            formStatus.className = 'form-status success';
-            contactForm.reset();
+            // Show loading state
+            formStatus.textContent = 'Sending...';
+            formStatus.className = 'form-status';
+            formStatus.style.display = 'block';
             
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
+            // Send email using EmailJS
+            emailjs.send('service_z3h81gg', 'template_5pvupg5', {
+                name: name.value,
+                email: email.value,
+                message: message.value,
+                title: 'Portfolio Contact'
+            })
+            .then(function(response) {
+                formStatus.textContent = 'Message sent successfully!';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            })
+            .catch(function(error) {
+                formStatus.textContent = 'Failed to send message. Please try again.';
+                formStatus.className = 'form-status error';
+                console.error('EmailJS error:', error);
+            });
         } else {
             formStatus.textContent = 'Please fix the errors above';
             formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
         }
     });
     
