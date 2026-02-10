@@ -305,22 +305,28 @@ header {
     font-size: var(--font-size-lg);
 }
 
+.skills {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
 .skills h2 {
     text-align: center;
     color: var(--primary-color);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
 
 .skill-category {
     background-color: var(--bg-color);
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
