@@ -58,6 +58,9 @@
           <div class="gradient-blob blob-3"></div>
         </div>
         <div class="container hero-content">
+          <div class="profile-photo">
+            <img src="assets/images/profile.jpg" alt="Fathan - QA Engineer" />
+          </div>
           <h1>Hi, I'm <span class="highlight-name">Fathan</span></h1>
           <p class="hero-subtitle">Quality Assurance Engineer</p>
           <p class="hero-description">
@@ -248,6 +251,8 @@
               Enterprise
             </button>
             <button class="filter-btn" data-filter="api">API Testing</button>
+            <button class="filter-btn" data-filter="automation">Automation</button>
+            <button class="filter-btn" data-filter="performance">Performance</button>
           </div>
           <div class="projects-grid">
             <article class="project-card" data-category="web enterprise">
@@ -390,8 +395,8 @@
                 <h3>Pamafix</h3>
                 <p class="project-role">Role: QA Engineer</p>
                 <p class="project-description">
-                  Enterprise finance application with microservices
-                  architecture.
+                  Enterprise finance application with SAP integration and
+                  modular architecture.
                 </p>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="pamafix">View Gallery</button>
@@ -410,11 +415,11 @@
                     business workflows.
                   </p>
                   <p>
-                    The application is built using a microservices architecture,
-                    allowing each financial module to operate independently
-                    while maintaining reliable communication between services.
-                    This approach improves scalability, maintainability, and
-                    system flexibility.
+                    The application is built with a modular architecture,
+                    allowing financial components to be developed and maintained
+                    independently while ensuring reliable integration across the
+                    platform. This approach improves scalability,
+                    maintainability, and system flexibility.
                   </p>
                 </div>
               </div>
@@ -432,8 +437,8 @@
                 <h3>Pamafix SAP</h3>
                 <p class="project-role">Role: QA Engineer & QA Leader</p>
                 <p class="project-description">
-                  Enterprise finance application with SAP integration and
-                  modular architecture.
+                  Enterprise finance application with microservices
+                  architecture.
                 </p>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="pamafix-sap">View Gallery</button>
@@ -457,11 +462,151 @@
                     business workflows.
                   </p>
                   <p>
-                    The application is built with a modular architecture,
-                    allowing financial components to be developed and maintained
-                    independently while ensuring reliable integration across the
-                    platform. This approach improves scalability,
-                    maintainability, and system flexibility.
+                    The application is built using a microservices architecture,
+                    allowing each financial module to operate independently
+                    while maintaining reliable communication between services.
+                    This approach improves scalability, maintainability, and
+                    system flexibility.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="automation enterprise">
+              <img
+                src="assets/images/playwright-pama/automation playwright 1.png"
+                alt="Playwright Automation - Pama Management Report"
+                loading="lazy"
+                class="project-thumbnail"
+                data-project="playwright-pama"
+              />
+              <div class="project-content">
+                <h3>Playwright Automation - Pama Management Report</h3>
+                <p class="project-role">Role: QA Engineer</p>
+                <p class="project-description">
+                  End-to-end test automation for enterprise reporting system using Playwright and TypeScript.
+                </p>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="playwright-pama">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="project-details">
+                  <div class="project-details-close">
+                    <button class="details-close-btn" aria-label="Close details">×</button>
+                  </div>
+                  <p>
+                    This project showcases end-to-end test automation for the Pama Management Report application using Playwright. The automation framework is structured with dedicated folders for tests, pages, fixtures, utilities, and documentation, following a maintainable and scalable approach for web testing.
+                  </p>
+                  <p>
+                    The project uses TypeScript configuration (playwright.config.ts) and supports environment-based setup via .env.example, enabling consistent test execution across different environments. Test coverage focuses on critical user flows and reporting features within the Pama Management context.
+                  </p>
+                  <p>
+                    These artifacts demonstrate QA ownership of automation design, implementation, and maintenance for enterprise reporting systems, aligned with modern testing best practices and continuous integration workflows.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="performance enterprise api">
+              <img
+                src="assets/images/k6-pamafix-sap/load test 1.png"
+                alt="K6 Load Testing - Pamafix SAP"
+                loading="lazy"
+                class="project-thumbnail"
+                data-project="k6-pamafix-sap"
+              />
+              <div class="project-content">
+                <h3>K6 Load Testing - Pamafix SAP</h3>
+                <p class="project-role">Role: QA Engineer</p>
+                <p class="project-description">
+                  Performance and load testing for SAP-integrated finance application using K6.
+                </p>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="k6-pamafix-sap">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="project-details">
+                  <div class="project-details-close">
+                    <button class="details-close-btn" aria-label="Close details">×</button>
+                  </div>
+                  <p>
+                    This project documents load and performance testing for the Pamafix SAP application using K6. The tests validate system behavior under concurrent load, measuring HTTP request duration, success rates, and custom thresholds to ensure the platform remains stable and responsive for end users.
+                  </p>
+                  <p>
+                    Test scenarios include master-data and notification flows, with metrics tracked for response times (e.g. p95, p99), error rates, iterations per second, and network usage. Thresholds are defined so that failures (such as p99 exceeding 3 seconds) cause the test run to exit with a non-zero code, supporting CI/CD quality gates.
+                  </p>
+                  <p>
+                    These materials illustrate QA involvement in performance testing strategy, threshold definition, and result analysis for enterprise finance systems integrated with SAP.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="automation api">
+              <img
+                src="assets/images/mocha-rups/automation 1.png"
+                alt="Mocha Chai Automation - RUPS"
+                loading="lazy"
+                class="project-thumbnail"
+                data-project="mocha-rups"
+              />
+              <div class="project-content">
+                <h3>Mocha Chai Automation - RUPS</h3>
+                <p class="project-role">Role: QA Engineer</p>
+                <p class="project-description">
+                  API and workflow automation for investor meeting management system using Mocha and Chai.
+                </p>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="mocha-rups">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="project-details">
+                  <div class="project-details-close">
+                    <button class="details-close-btn" aria-label="Close details">×</button>
+                  </div>
+                  <p>
+                    This project presents API and workflow automation for the RUPS (Rapat Umum Pemegang Saham) management and investor-facing system using Mocha and Chai. The tests cover authentication, role management, file upload, and attendance confirmation for individual representatives in meeting-management flows.
+                  </p>
+                  <p>
+                    Test execution is organized by meeting ID and targets endpoints such as sign-in, available roles, attendance confirmation status, and file upload, with assertions on response status codes and payload validity. Passing and pending cases are clearly reported to support regression and release confidence.
+                  </p>
+                  <p>
+                    These artifacts demonstrate QA ownership of test automation design and execution for regulatory and governance-related applications in an investor-management context.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="automation enterprise api">
+              <img
+                src="assets/images/mocha-pamafix-sap/automation 1.png"
+                alt="Mocha Chai Automation - Pamafix SAP"
+                loading="lazy"
+                class="project-thumbnail"
+                data-project="mocha-pamafix-sap"
+              />
+              <div class="project-content">
+                <h3>Mocha Chai Automation - Pamafix SAP</h3>
+                <p class="project-role">Role: QA Engineer</p>
+                <p class="project-description">
+                  Test automation suite for SAP-integrated finance application using Mocha and Chai with GitLab CI.
+                </p>
+                <div class="project-buttons">
+                  <button class="view-gallery-btn" data-project="mocha-pamafix-sap">View Gallery</button>
+                  <button class="read-more-btn">Read More</button>
+                </div>
+                <div class="project-details">
+                  <div class="project-details-close">
+                    <button class="details-close-btn" aria-label="Close details">×</button>
+                  </div>
+                  <p>
+                    This project covers test automation for the Pamafix SAP application using Mocha and Chai. The automation suite is structured with runners, test modules, payloads, and utilities, and is integrated into the development workflow via GitLab CI (e.g. .gitlab-ci.yml) for consistent execution on code changes.
+                  </p>
+                  <p>
+                    Tests focus on critical business flows such as invoice handling, approval steps, and internal versus external fix scenarios, with environment-specific configuration supported through .env files. The project is maintained alongside ongoing feature work, as reflected in recent merge and conflict-resolution activity.
+                  </p>
+                  <p>
+                    These materials illustrate QA involvement in building and maintaining automated regression and integration tests for the enterprise finance and SAP-integrated Pamafix platform.
                   </p>
                 </div>
               </div>

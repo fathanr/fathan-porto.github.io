@@ -44,6 +44,37 @@ const projectGalleries = {
       "assets/images/pamafix-sap/dashboard-pamafix-sap.png",
     ],
   },
+  "playwright-pama": {
+    title: "Playwright Automation - Pama Management Report",
+    images: [
+      "assets/images/playwright-pama/automation playwright 1.png",
+    ],
+  },
+  "k6-pamafix-sap": {
+    title: "K6 Load Testing - Pamafix SAP",
+    images: [
+      "assets/images/k6-pamafix-sap/load test 1.png",
+      "assets/images/k6-pamafix-sap/load test 2.png",
+      "assets/images/k6-pamafix-sap/load test 3.png",
+      "assets/images/k6-pamafix-sap/load test 4.png",
+    ],
+  },
+  "mocha-rups": {
+    title: "Mocha Chai Automation - RUPS",
+    images: [
+      "assets/images/mocha-rups/automation 1.png",
+      "assets/images/mocha-rups/automation 2.png",
+      "assets/images/mocha-rups/automation 3.png",
+    ],
+  },
+  "mocha-pamafix-sap": {
+    title: "Mocha Chai Automation - Pamafix SAP",
+    images: [
+      "assets/images/mocha-pamafix-sap/automation 1.png",
+      "assets/images/mocha-pamafix-sap/automation 2.png",
+      "assets/images/mocha-pamafix-sap/automation 3.png",
+    ],
+  },
 };
 
 let currentProject = "";
