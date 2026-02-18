@@ -32,3 +32,8 @@ Artikel-blog/
 # Build files
 dist/
 build/
+
+
+#Letter
+/Cover_Letter_EN_Muhammad_Fathan_Ridlo.md
+/Surat_Lamaran_ID_Muhammad_Fathan_Ridlo.md
