@@ -181,9 +181,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Keyboard navigation
   document.addEventListener("keydown", function (e) {
     if (modal.style.display !== "flex") return;
-
     if (e.key === "Escape") closeModal();
     if (e.key === "ArrowLeft") prevBtn.click();
     if (e.key === "ArrowRight") nextBtn.click();
   });
+
+  // ── UX #8: Touch swipe support ──
+  let touchStartX = 0;
+  modalImage.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  modalImage.addEventListener("touchend", e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
+  }, { passive: true });
 });

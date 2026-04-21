@@ -2,126 +2,132 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     emailjs.init('jS774oyqSbaXYSjWm');
-    
+
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
     const header = document.getElementById('header');
-    
-    // Mobile menu toggle
+
+    // ── UX #6: Nav backdrop ──
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openMenu() {
+        menuToggle.classList.add('active');
+        navMenu.classList.add('active');
+        backdrop.classList.add('active');
+    }
+    function closeMenu() {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+    }
+
     menuToggle.addEventListener('click', function() {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        navMenu.classList.contains('active') ? closeMenu() : openMenu();
     });
-    
+    backdrop.addEventListener('click', closeMenu);
+
     // Smooth scroll to sections
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
             if (targetSection) {
                 const headerHeight = header.offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                closeMenu();
             }
         });
     });
-    
-    // Active nav link on scroll
+
+    // ── UX #9: Active nav — tighter dead zone (50px instead of 100px) ──
+    // ── UX #4: Scroll progress bar ──
+    const progressBar = document.createElement('div');
+    progressBar.id = 'scroll-progress';
+    document.body.prepend(progressBar);
+
     window.addEventListener('scroll', function() {
+        // Progress bar
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+
+        // Active nav
         let current = '';
         const sections = document.querySelectorAll('section');
         const headerHeight = header.offsetHeight;
-        
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            const sectionTop = section.offsetTop - headerHeight - 50;
+            if (scrollTop >= sectionTop && scrollTop < sectionTop + section.offsetHeight) {
                 current = section.getAttribute('id');
             }
         });
-        
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
         });
+
+        // ── UX #10: Back-to-top threshold 600px ──
+        backToTop.classList.toggle('visible', scrollTop > 600);
     });
-    
-    // Back to top button
+
+    // Back to top
     const backToTop = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-    
     backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
-    // Collapsible sections
+
+    // ── UX #7: Collapsible max-height fix via JS ──
     const collapsibles = document.querySelectorAll('.collapsible');
-    
     collapsibles.forEach(item => {
-        const header = item.querySelector('.experience-header, .cert-header');
+        const hdr = item.querySelector('.experience-header, .cert-header');
         const content = item.querySelector('.experience-content, .cert-content');
         const toggleBtn = item.querySelector('.toggle-btn');
-        
-        header.addEventListener('click', function() {
-            content.classList.toggle('active');
-            toggleBtn.textContent = content.classList.contains('active') ? '−' : '+';
+
+        hdr.addEventListener('click', function() {
+            const isOpen = content.classList.contains('active');
+            if (isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = '0';
+                    content.classList.remove('active');
+                });
+            } else {
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.addEventListener('transitionend', function onEnd() {
+                    content.style.maxHeight = 'none';
+                    content.removeEventListener('transitionend', onEnd);
+                }, { once: true });
+            }
+            toggleBtn.textContent = isOpen ? '+' : '−';
         });
     });
-    
-    // Project read more (accordion per card, tanpa mengubah layout card lain)
+
+    // Project read more accordion
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
     const projectCards = document.querySelectorAll('.project-card');
     const detailsCloseBtns = document.querySelectorAll('.details-close-btn');
-    
+
+    function closeOverlay(card) {
+        const details = card.querySelector('.project-details');
+        const btn = card.querySelector('.read-more-btn');
+        if (details) details.classList.remove('active');
+        if (btn) btn.textContent = 'Read More';
+    }
+
     readMoreBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            const projectCard = this.closest('.project-card');
-            const details = projectCard.querySelector('.project-details');
-            const isCurrentlyActive = details.classList.contains('active');
-            
-            // Tutup hanya card lain yang sedang aktif
-            projectCards.forEach(card => {
-                if (card === projectCard) return;
-                
-                const cardDetails = card.querySelector('.project-details');
-                const cardBtn = card.querySelector('.read-more-btn');
-                
-                if (cardDetails && cardDetails.classList.contains('active')) {
-                    cardDetails.classList.remove('active');
-                    if (cardBtn) {
-                        cardBtn.textContent = 'Read More';
-                    }
-                }
-            });
-            
-            // Toggle card yang diklik
-            if (isCurrentlyActive) {
-                details.classList.remove('active');
-                this.textContent = 'Read More';
+            const card = this.closest('.project-card');
+            const details = card.querySelector('.project-details');
+            const isActive = details.classList.contains('active');
+            projectCards.forEach(c => { if (c !== card) closeOverlay(c); });
+            if (isActive) {
+                closeOverlay(card);
             } else {
                 details.classList.add('active');
                 this.textContent = 'Read Less';
@@ -129,108 +135,94 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Tombol close di dalam overlay deskripsi
     detailsCloseBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            const projectCard = this.closest('.project-card');
-            const details = projectCard.querySelector('.project-details');
-            const readMoreBtn = projectCard.querySelector('.read-more-btn');
-            
-            if (details && details.classList.contains('active')) {
-                details.classList.remove('active');
-            }
-            
-            if (readMoreBtn) {
-                readMoreBtn.textContent = 'Read More';
-            }
+            closeOverlay(this.closest('.project-card'));
         });
     });
-    
-    // Fade in animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+
+    // ── UX #2: Close project overlay on outside tap ──
+    projectCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            const details = card.querySelector('.project-details');
+            if (details && details.classList.contains('active') && e.target === card) {
+                closeOverlay(card);
             }
         });
-    }, observerOptions);
-    
-    const fadeElements = document.querySelectorAll('.project-card, .blog-card, .skill-category');
-    fadeElements.forEach(el => {
+
+        // Swipe down to close overlay
+        let touchStartY = 0;
+        card.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+        card.addEventListener('touchend', e => {
+            const details = card.querySelector('.project-details');
+            if (details && details.classList.contains('active')) {
+                if (e.changedTouches[0].clientY - touchStartY > 60) closeOverlay(card);
+            }
+        }, { passive: true });
+    });
+
+    // Fade in animation on scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.project-card, .blog-card, .skill-category').forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
-    
-    // Contact form validation
+
+    // ── UX #1: Image skeleton blur-up ──
+    document.querySelectorAll('.project-thumbnail').forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+        }
+    });
+
+    // Contact form
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.querySelector('.form-status');
-    
+    const submitBtn = contactForm.querySelector('.submit-btn');
+
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
-        
         let isValid = true;
-        
-        // Clear previous errors
+
         document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
         document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('error'));
-        
-        // Validate name
-        if (name.value.trim() === '') {
-            showError(name, 'Name is required');
-            isValid = false;
-        }
-        
-        // Validate email
-        if (email.value.trim() === '') {
-            showError(email, 'Email is required');
-            isValid = false;
-        } else if (!isValidEmail(email.value)) {
-            showError(email, 'Please enter a valid email');
-            isValid = false;
-        }
-        
-        // Validate message
-        if (message.value.trim() === '') {
-            showError(message, 'Message is required');
-            isValid = false;
-        }
-        
+
+        if (!name.value.trim()) { showError(name, 'Name is required'); isValid = false; }
+        if (!email.value.trim()) { showError(email, 'Email is required'); isValid = false; }
+        else if (!isValidEmail(email.value)) { showError(email, 'Please enter a valid email'); isValid = false; }
+        if (!message.value.trim()) { showError(message, 'Message is required'); isValid = false; }
+
         if (isValid) {
-            // Show loading state
-            formStatus.textContent = 'Sending...';
-            formStatus.className = 'form-status';
-            formStatus.style.display = 'block';
-            
-            // Send email using EmailJS
+            // ── UX #3: Disable button + spinner ──
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+            formStatus.style.display = 'none';
+
             emailjs.send('service_z3h81gg', 'template_5pvupg5', {
-                name: name.value,
-                email: email.value,
-                message: message.value,
-                title: 'Portfolio Contact'
-            })
-            .then(function(response) {
+                name: name.value, email: email.value,
+                message: message.value, title: 'Portfolio Contact'
+            }).then(() => {
                 formStatus.textContent = 'Message sent successfully!';
                 formStatus.className = 'form-status success';
                 contactForm.reset();
-                
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 5000);
-            })
-            .catch(function(error) {
+                setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
+            }).catch(err => {
                 formStatus.textContent = 'Failed to send message. Please try again.';
                 formStatus.className = 'form-status error';
-                console.error('EmailJS error:', error);
+                console.error('EmailJS error:', err);
+            }).finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                formStatus.style.display = 'block';
             });
         } else {
             formStatus.textContent = 'Please fix the errors above';
@@ -238,15 +230,27 @@ document.addEventListener('DOMContentLoaded', function() {
             formStatus.style.display = 'block';
         }
     });
-    
+
+    // ── UX #12: Textarea character counter ──
+    const textarea = document.getElementById('message');
+    const MAX_CHARS = 500;
+    const counter = document.createElement('span');
+    counter.className = 'char-counter';
+    counter.textContent = `0 / ${MAX_CHARS}`;
+    textarea.parentElement.appendChild(counter);
+    textarea.addEventListener('input', function() {
+        const len = this.value.length;
+        if (len > MAX_CHARS) this.value = this.value.slice(0, MAX_CHARS);
+        const current = Math.min(len, MAX_CHARS);
+        counter.textContent = `${current} / ${MAX_CHARS}`;
+        counter.className = 'char-counter' + (current >= MAX_CHARS ? ' at-limit' : current >= MAX_CHARS * 0.8 ? ' near-limit' : '');
+    });
+
     function showError(input, message) {
         input.classList.add('error');
-        const errorElement = input.parentElement.querySelector('.error-message');
-        errorElement.textContent = message;
+        input.parentElement.querySelector('.error-message').textContent = message;
     }
-    
     function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 });
