@@ -1,0 +1,80 @@
+MUHAMMAD FATHAN RIDLO
+Quality Assurance Engineer
+Indonesia | fathan540@gmail.com | LinkedIn: https://www.linkedin.com/in/muhammad-fathan-ridlo-a64004154
+Portfolio: https://fathanr.github.io/fathan-porto.github.io/ | GitHub: https://github.com/fathanr
+
+PROFESSIONAL SUMMARY
+Quality Assurance Engineer with 4+ years of experience validating enterprise web, mobile, finance, recruitment, procurement, mining, and SAP-integrated applications. Skilled in manual testing, test case design, regression testing, API testing, UI automation, performance testing, defect reporting, UAT support, and release readiness. Experienced with Playwright, Cypress, Postman, Mocha Chai, K6, GitLab, Jira, MySQL, Docker, PHP, SDLC, and STLC. Strong at translating business risk into practical QA coverage and collaborating with developers, PMs, clients, and cross-functional teams.
+
+CORE SKILLS
+QA Process: Test Planning, Test Case Design, Test Scenario Design, Regression Testing, Exploratory Testing, UAT Support, Release Readiness
+Testing Types: Functional Testing, Integration Testing, API Testing, Web Testing, Mobile Testing, End-to-End Testing, Performance and Load Testing
+Automation and Tools: Playwright, Cypress, Postman, Mocha Chai, K6, GitLab CI, GitLab Board, Jira, GitHub
+Technical: MySQL, Docker, PHP, Browser DevTools, Basic SQL Validation, SDLC, STLC
+Soft Skills: Client Communication, Cross-functional Collaboration, Defect Triage, Documentation, Team Mentoring
+
+PROFESSIONAL EXPERIENCE
+Lead Quality Assurance Engineer - PT Digdaya Olah Teknologi Indonesia | Jan 2025 - Present
+* Lead QA planning, execution, and release-readiness activities for enterprise projects, including SAP-integrated finance and recruitment platforms.
+* Coordinate QA scope with clients, project managers, developers, designers, and stakeholders to align testing priorities with business risk.
+* Review requirements and translate them into test scenarios, regression coverage, UAT checks, and defect tracking workflows.
+* Mentor QA team members and students by reviewing test cases, giving constructive feedback, and supporting practical QA skill development.
+* Analyze technical issues, communicate findings clearly to technical and non-technical stakeholders, and support root-cause discussions.
+* Improve handoff quality across product, design, development, and analytics teams through structured documentation and clear QA evidence.
+
+Quality Assurance Engineer - PT Digdaya Olah Teknologi Indonesia | Mar 2022 - Present
+* Design, execute, and maintain manual test cases for web and mobile applications across enterprise business domains.
+* Perform functional, regression, API, integration, exploratory, UAT, and performance testing to validate product quality before release.
+* Build and maintain automation assets using tools such as Playwright, Cypress, Postman, Mocha Chai, and K6.
+* Document defects with reproducible steps, severity, actual versus expected results, screenshots/logs, and retest notes.
+* Collaborate with developers, PMs, and stakeholders through GitLab and Jira to track issues, validate fixes, and support release decisions.
+* Prepare QA documentation including test scenarios, test execution results, bug reports, regression notes, and improvement recommendations.
+
+Freelance Quality Assurance Engineer - CV Codespace Indonesia | Jan 2023 - Present
+* Plan and execute QA activities for web applications, including functional testing, regression testing, and UI validation.
+* Create test scenarios and test cases based on business requirements, acceptance criteria, and user flows.
+* Perform manual testing, automation support, and load testing where required to improve application reliability.
+* Report defects and testing results using GitHub and Jira, including clear reproduction steps and supporting evidence.
+* Collaborate with developers and project stakeholders to validate fixes and ensure quality expectations are met.
+
+Quality Assurance Engineer Intern - PT Digdaya Olah Teknologi Indonesia | Dec 2020 - Feb 2021
+* Conducted manual testing on prototype designs and mobile applications.
+* Identified defects, documented findings, and validated fixes during development cycles.
+* Learned practical QA workflows including test execution, defect reporting, and collaboration with development teams.
+
+SELECTED QA PROJECTS
+Pamafix SAP / Enterprise Finance Application
+* Validated SAP-integrated finance workflows including invoice handling, approvals, reporting, and API-related scenarios.
+* Supported regression testing, defect triage, UAT coordination, and release-readiness checks.
+* Used API testing, manual testing, automation support, and K6 performance validation to reduce release risk.
+
+Mind ID Recruitment Portal
+* Tested candidate portal and HR backoffice workflows including authentication, recruitment pipeline, role-based access, and user-facing flows.
+* Supported exploratory testing, regression scenarios, defect reporting, and release coordination.
+
+Pertamina Procurement System
+* Validated procurement workflows, document approval flows, and Office 365 digital-sign integration.
+* Performed functional testing, integration checks, API validation, and approval-flow verification.
+
+Automation and Performance Testing
+* Built or maintained automation assets using Playwright, Cypress, Mocha Chai, Postman, and K6.
+* Created API and performance scenarios covering authentication, payload validation, response-time thresholds, and release quality gates.
+
+EDUCATION
+Bachelor of Informatics Engineering - State Polytechnic of Jember | 2017 - 2021
+
+CERTIFICATIONS AND TRAINING
+Studyjam Quality Assurance Engineer - Nest Academy
+* Completed QA study program covering software testing fundamentals, test case design, test scenarios, acceptance criteria, manual testing, regression testing, exploratory testing, and agile QA workflow.
+
+TechTalk Quality Assurance: Introduction to QA and Sentry Implementation - DOT Indonesia x Intermedia Amikom x Nest Academy | Jul 2023
+* Participated in QA fundamentals and Sentry implementation training for monitoring and issue reproduction workflows.
+
+MikroTik Certified Network Associate (MTCNA)
+* Completed training on networking fundamentals, IP addressing, subnetting, routing, firewall, NAT, wireless networking, troubleshooting, and network security basics.
+
+HackerRank Problem Solving (Basic)
+* Completed certification focused on logic, loops, conditionals, arrays, basic data structures, debugging, and problem-solving skills relevant to QA scripting.
+
+LANGUAGES
+Indonesian: Native | English: Professional Working Proficiency

@@ -117,7 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
     showImage(0);
     createThumbnails(gallery.images);
     modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    modalClose.focus();
   }
 
   function showImage(index) {
@@ -126,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     currentImageIndex = index;
     modalImage.src = gallery.images[index];
+    modalImage.alt = `${gallery.title} screenshot ${index + 1}`;
 
     // Update active thumbnail
     document.querySelectorAll(".modal-thumbnail").forEach((thumb, i) => {
@@ -159,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeModal() {
     modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 

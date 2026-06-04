@@ -50,8 +50,8 @@
 ### Task 8: Contact Form ✓
 - Client-side validation (name, email, message)
 - Visual error feedback
-- Success/error messages
-- Ready for backend integration
+- EmailJS static-hosting integration for GitHub Pages
+- Honeypot field for basic spam protection
 
 ### Task 9: Blog Section ✓
 - Flexible structure for embedded and external content
@@ -105,9 +105,9 @@ portfolio/
 2. **Add GitHub Links**:
    - Replace `#` in project cards with actual repository URLs
 
-3. **Connect Contact Form**:
-   - Integrate with FormSpree, EmailJS, or custom backend
-   - Update form handler in `js/main.js`
+3. **Contact Form**:
+   - Already works on GitHub Pages through EmailJS in `js/main.js`
+   - For a fully private email-sending flow, move the sender to a backend or use a form provider
 
 4. **Add Blog Content**:
    - Write articles or link to external blog posts

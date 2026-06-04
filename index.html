@@ -15,13 +15,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio QA Engineer - Showcasing expertise in test automation, quality assurance, and software testing"
+      content="Portfolio Fathan Ridlo, Quality Assurance Engineer specializing in test automation, API testing, performance testing, Playwright, Mocha Chai, Postman, K6, and enterprise QA leadership"
     />
     <meta
       name="keywords"
-      content="QA Engineer, Test Automation, Cypress, Playwright, Quality Assurance"
+      content="Fathan Ridlo, QA Engineer, Quality Assurance, Test Automation, Playwright, Cypress, Mocha Chai, Postman, K6, API Testing, Performance Testing"
     />
-    <title>QA Engineer Portfolio</title>
+    <title>Fathan Ridlo — Quality Assurance Engineer | Automation, API & Performance Testing</title>
+    <meta property="og:title" content="Fathan Ridlo — Quality Assurance Engineer" />
+    <meta property="og:description" content="QA portfolio focused on test automation, API testing, performance testing, enterprise QA leadership, and release quality evidence." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a1628" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <script
@@ -61,6 +65,7 @@
         <ul class="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#artifacts">QA Evidence</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#certifications">Certifications</a></li>
@@ -134,10 +139,15 @@
             <p class="hero-greeting">Hi, I'm</p>
             <h1><span class="highlight-name">Fathan</span></h1>
             <p class="hero-subtitle">Quality Assurance Engineer</p>
-            <p class="hero-description">Ensuring software excellence through rigorous manual testing, automated test frameworks, and end-to-end quality assurance across enterprise applications.</p>
+            <p class="hero-description">I help teams ship reliable enterprise software through risk-based test planning, API and UI automation, performance validation, clear defect reporting, and release-quality gates.</p>
+            <div class="impact-strip" aria-label="QA impact highlights">
+              <span><strong>4+ yrs</strong> enterprise QA</span>
+              <span><strong>API/UI</strong> automation</span>
+              <span><strong>K6</strong> performance gates</span>
+            </div>
             <div class="hero-buttons">
-              <a href="#contact" class="cta-button">Get In Touch</a>
-              <a href="#projects" class="cta-button-secondary">View Projects</a>
+              <a href="#projects" class="cta-button">View Projects</a>
+              <a href="#contact" class="cta-button-secondary">Get In Touch</a>
             </div>
           </div>
           <div class="hero-photo">
@@ -152,16 +162,91 @@
         <div class="container">
           <h2>About Me</h2>
           <p>
-            QA Engineer with over 4 years of experience in manual and automated
-            testing across enterprise applications. Specialized in test
-            automation frameworks, API testing, and quality assurance
-            leadership.
+            QA Engineer with 4+ years of experience validating enterprise web, finance,
+            recruitment, procurement, and SAP-integrated applications. My work covers
+            manual testing, API testing, UI automation, performance testing, defect
+            triage, UAT support, and release readiness.
           </p>
-          <p>
-            Passionate about delivering high-quality software solutions and
-            implementing efficient testing strategies that ensure product
-            reliability and user satisfaction.
+          <div class="qa-proof-grid">
+            <div><strong>Test Strategy</strong><span>Risk-based planning, regression scope, UAT support, release checklist.</span></div>
+            <div><strong>Automation</strong><span>Playwright, Cypress, Mocha Chai, Postman collections, GitLab CI execution.</span></div>
+            <div><strong>Performance</strong><span>K6 scenarios with p95/p99 thresholds, error-rate checks, and CI-friendly exits.</span></div>
+            <div><strong>Defect Quality</strong><span>Clear reproduction steps, evidence screenshots, severity/priority, and lifecycle tracking.</span></div>
+          </div>
+          <div class="section-actions">
+            <a href="#artifacts" class="text-cta">View QA Evidence samples</a>
+            <a href="#case-study" class="text-cta">Read featured case study</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="artifacts" class="artifacts">
+        <div class="container">
+          <h2>QA Evidence</h2>
+          <p class="section-intro">
+            Sanitized public samples that show my QA thinking: test design, defect evidence,
+            API coverage, performance findings, and release readiness without exposing
+            confidential company data. Company repositories are private, so these artifacts
+            are public samples of my QA process rather than client source code.
           </p>
+          <div class="artifacts-grid">
+            <article class="artifact-card">
+              <span class="artifact-tag">Test Design</span>
+              <h3>Sample Test Case</h3>
+              <p>Functional and regression coverage for an enterprise invoice approval flow, including preconditions, test data, expected results, and evidence to capture.</p>
+              <a href="artifacts/sample-test-case.md" target="_blank" rel="noopener" class="artifact-link">Open artifact →</a>
+            </article>
+            <article class="artifact-card">
+              <span class="artifact-tag">Defect Report</span>
+              <h3>Sample Bug Report</h3>
+              <p>Bug report format with business impact, reproducible steps, actual versus expected result, suspected area, and retest notes.</p>
+              <a href="artifacts/sample-bug-report.md" target="_blank" rel="noopener" class="artifact-link">Open artifact →</a>
+            </article>
+            <article class="artifact-card">
+              <span class="artifact-tag">API Testing</span>
+              <h3>Sample API Scenario</h3>
+              <p>API regression matrix for authentication and invoice workflows, including authorization checks, payload validation, and CI quality gate criteria.</p>
+              <a href="artifacts/sample-api-test-scenario.md" target="_blank" rel="noopener" class="artifact-link">Open artifact →</a>
+            </article>
+            <article class="artifact-card">
+              <span class="artifact-tag">Performance</span>
+              <h3>Sample K6 Summary</h3>
+              <p>Performance test summary with p95/p99 thresholds, error-rate analysis, release decision, and follow-up recommendations.</p>
+              <a href="artifacts/sample-k6-summary.md" target="_blank" rel="noopener" class="artifact-link">Open artifact →</a>
+            </article>
+            <article class="artifact-card">
+              <span class="artifact-tag">Release QA</span>
+              <h3>Release Checklist</h3>
+              <p>Release-readiness checklist covering functional coverage, API integration, automation, performance, defects, UAT, and QA sign-off.</p>
+              <a href="artifacts/sample-release-checklist.md" target="_blank" rel="noopener" class="artifact-link">Open artifact →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="case-study" class="case-study">
+        <div class="container">
+          <h2>Featured QA Case Study</h2>
+          <p class="section-intro">
+            A concise example of how I approach high-risk enterprise releases: identify
+            business risk, design layered coverage, collect evidence, and support a clear
+            release decision.
+          </p>
+          <article class="case-study-card">
+            <div class="case-study-header">
+              <span class="artifact-tag">Enterprise Finance QA</span>
+              <h3>SAP-Integrated Finance Regression & Performance Validation</h3>
+              <p>Sanitized case study based on enterprise finance workflows with invoice handling, approvals, reporting, and SAP-related API integration.</p>
+            </div>
+            <div class="case-study-grid">
+              <div><strong>Problem</strong><span>Finance releases carried high business risk because defects could impact invoice processing, approval status, reporting accuracy, and integration handoff.</span></div>
+              <div><strong>Risk Focus</strong><span>Authentication, role access, invoice state transitions, API payload validation, SAP callback handling, regression scope, and response-time stability.</span></div>
+              <div><strong>QA Approach</strong><span>Combined manual scenario design, API checks, UI regression, defect triage, UAT support, and K6 performance thresholds before release sign-off.</span></div>
+              <div><strong>Evidence Collected</strong><span>Test cases, API scenario matrix, screenshots, bug reports, K6 summary, regression notes, and release-readiness checklist.</span></div>
+              <div><strong>Tools</strong><span>Postman, Mocha Chai, Playwright, K6, GitLab Board, browser DevTools, and SQL/API validation where required.</span></div>
+              <div><strong>Release Decision</strong><span>QA sign-off is based on critical-path pass status, blocker/critical defects, automation results, performance thresholds, and UAT readiness.</span></div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -229,8 +314,15 @@
           <div class="experience-list">
             <div class="experience-item collapsible">
               <div class="experience-header">
-                <h3>Lead QA</h3>
-                <button class="toggle-btn" aria-label="Toggle details">
+                <div>
+                  <h3>Lead QA</h3>
+                  <p class="experience-meta">DOT Indonesia • Enterprise finance and recruitment projects</p>
+                  <ul class="experience-snapshot">
+                    <li>Led QA planning and release readiness for SAP-integrated and recruitment platforms.</li>
+                    <li>Coordinated manual, API, regression, UAT, and defect-tracking activities.</li>
+                  </ul>
+                </div>
+                <button class="toggle-btn" aria-label="Toggle Lead QA details" aria-expanded="false">
                   +
                 </button>
               </div>
@@ -247,8 +339,15 @@
             </div>
             <div class="experience-item collapsible">
               <div class="experience-header">
-                <h3>QA Engineer</h3>
-                <button class="toggle-btn" aria-label="Toggle details">
+                <div>
+                  <h3>QA Engineer</h3>
+                  <p class="experience-meta">DOT Indonesia • Web, API, automation, and performance testing</p>
+                  <ul class="experience-snapshot">
+                    <li>Built and maintained automation assets using Playwright, Mocha Chai, Postman, and K6.</li>
+                    <li>Validated critical business flows across procurement, finance, education, and HR systems.</li>
+                  </ul>
+                </div>
+                <button class="toggle-btn" aria-label="Toggle QA Engineer details" aria-expanded="false">
                   +
                 </button>
               </div>
@@ -278,7 +377,7 @@
                   TechTalk Quality Assurance: Introduction to QA and Sentry
                   Implementation
                 </h3>
-                <button class="toggle-btn" aria-label="Toggle details">
+                <button class="toggle-btn" aria-label="Toggle details" aria-expanded="false">
                   +
                 </button>
               </div>
@@ -306,7 +405,7 @@
             <div class="cert-item collapsible">
               <div class="cert-header">
                 <h3>English for Work Settings</h3>
-                <button class="toggle-btn" aria-label="Toggle details">
+                <button class="toggle-btn" aria-label="Toggle details" aria-expanded="false">
                   +
                 </button>
               </div>
@@ -369,6 +468,10 @@
                   Web-based application supporting end-to-end job application
                   process with backoffice management for HR teams.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> candidate portal, HR backoffice, authentication, recruitment pipeline, and role-based workflows.</li>
+                  <li><strong>Evidence:</strong> exploratory testing, regression scenarios, defect tracking, and release coordination.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="mindid">
                     View Gallery
@@ -428,6 +531,10 @@
                   Student learning platform with interactive quizzes and
                   gamified rewards system.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> student quiz flow, login, gamified rewards, admin/backoffice content management.</li>
+                  <li><strong>Evidence:</strong> functional testing, negative scenarios, UI validation, and regression checks.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="mountseerah">
                     View Gallery
@@ -482,6 +589,10 @@
                   Procurement application with Office 365 integration for
                   automated digital signing.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> procurement workflow, document approval, Office 365 digital-sign integration.</li>
+                  <li><strong>Evidence:</strong> API/integration validation, approval-flow testing, and secure document-handling checks.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="pertamina">
                     View Gallery
@@ -536,6 +647,10 @@
                   Enterprise finance application with SAP integration and
                   modular architecture.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> invoice management, transaction tracking, reporting, SAP integration, and module regression.</li>
+                  <li><strong>Evidence:</strong> enterprise finance test scenarios, defect triage, API checks, and release support.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="pamafix">
                     View Gallery
@@ -591,6 +706,10 @@
                   Enterprise finance application with microservices
                   architecture.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> SAP-integrated finance flows, microservice communication, approvals, and internal/external fixes.</li>
+                  <li><strong>Evidence:</strong> led QA strategy, regression suites, integration checks, and UAT coordination.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="pamafix-sap">
                     View Gallery
@@ -651,6 +770,10 @@
                   End-to-end test automation for enterprise reporting system
                   using Playwright and TypeScript.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> E2E reporting flows, page objects, fixtures, utilities, environment-based execution.</li>
+                  <li><strong>Evidence:</strong> Playwright + TypeScript framework structure and reusable automation assets.</li>
+                </ul>
                 <div class="project-buttons">
                   <button
                     class="view-gallery-btn"
@@ -719,6 +842,10 @@
                   Performance and load testing for SAP-integrated finance
                   application using K6.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> concurrent-load behavior, response-time percentiles, error rate, and threshold validation.</li>
+                  <li><strong>Evidence:</strong> p95/p99 analysis, non-zero exit thresholds, and CI/CD quality gate readiness.</li>
+                </ul>
                 <div class="project-buttons">
                   <button
                     class="view-gallery-btn"
@@ -782,6 +909,10 @@
                   API and workflow automation for investor meeting management
                   system using Mocha and Chai.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> authentication, role management, attendance confirmation, file upload, and API payload validation.</li>
+                  <li><strong>Evidence:</strong> Mocha Chai assertions, workflow automation, pass/pending reports.</li>
+                </ul>
                 <div class="project-buttons">
                   <button class="view-gallery-btn" data-project="mocha-rups">
                     View Gallery
@@ -846,6 +977,10 @@
                   Test automation suite for SAP-integrated finance application
                   using Mocha and Chai with GitLab CI.
                 </p>
+                <ul class="qa-evidence-list">
+                  <li><strong>QA scope:</strong> invoice handling, approval steps, internal/external fix scenarios, and SAP-related API flows.</li>
+                  <li><strong>Evidence:</strong> Mocha Chai suite, payload utilities, environment config, and GitLab CI execution.</li>
+                </ul>
                 <div class="project-buttons">
                   <button
                     class="view-gallery-btn"
@@ -989,7 +1124,14 @@
       <section id="contact" class="contact">
         <div class="container">
           <h2>Get In Touch</h2>
-          <form class="contact-form" id="contactForm">
+          <p class="contact-note">For the fastest response, contact me through LinkedIn or GitHub. This form is a front-end validation demo; use the direct links below for real hiring or collaboration messages.</p>
+          <div class="contact-actions" aria-label="Direct contact links">
+            <a href="assets/cv/fathan-ridlo-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a href="https://linkedin.com/in/muhammad-fathan-ridlo-a64004154" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/fathanr" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://fathan540.medium.com" target="_blank" rel="noopener">Medium</a>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" autocomplete="name" required />
@@ -999,6 +1141,10 @@
               <label for="email">Email</label>
               <input type="email" id="email" name="email" autocomplete="email" required />
               <span class="error-message"></span>
+            </div>
+            <div class="form-group honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
@@ -1042,8 +1188,8 @@
     </button>
 
     <!-- Image Gallery Modal -->
-    <div id="imageModal" class="modal">
-      <span class="modal-close">&times;</span>
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <button type="button" class="modal-close" aria-label="Close gallery">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
           <h3 id="modalTitle"></h3>
@@ -1052,7 +1198,7 @@
           <button class="modal-nav prev" aria-label="Previous image">
             &#10094;
           </button>
-          <img id="modalImage" src="" alt="" />
+          <img id="modalImage" src="" alt="Project gallery image" />
           <button class="modal-nav next" aria-label="Next image">
             &#10095;
           </button>
@@ -1066,3 +1212,4 @@
     <script src="js/gallery.js"></script>
   </body>
 </html>
+

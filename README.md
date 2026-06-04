@@ -1,14 +1,15 @@
 # QA Engineer Portfolio Website
 
-A professional single-page portfolio website showcasing QA Engineering expertise, projects, and skills.
+A professional single-page QA Engineer portfolio showcasing test strategy, automation, API testing, performance testing, enterprise project evidence, and QA articles.
 
 ## Features
 
 - ✅ Responsive design (mobile, tablet, desktop)
 - ✅ Smooth scrolling navigation
 - ✅ Project filtering system
+- ✅ Public sanitized QA artifacts (test case, bug report, API scenario, K6 summary, release checklist)
 - ✅ Collapsible sections
-- ✅ Contact form with validation
+- ✅ EmailJS contact form with validation and honeypot spam check
 - ✅ Back-to-top button
 - ✅ Fade-in animations
 - ✅ Minimalist professional design
@@ -24,6 +25,7 @@ portfolio/
 ├── js/
 │   ├── main.js         # Core functionality
 │   └── filter.js       # Project filtering
+├── artifacts/          # Sanitized public QA sample documents
 ├── assets/
 │   ├── images/         # Project images
 │   │   ├── mindid/
@@ -60,29 +62,37 @@ Edit experience items in `index.html` (lines 74-95):
 Projects are in `index.html` (lines 115-220):
 - Update project descriptions
 - Replace images in `assets/images/` folders
-- Update GitHub links (currently placeholders)
+- Private company repositories are documented with clear non-disclosure notes
 - Modify `data-category` attributes for filtering
+
+### QA Artifacts
+
+Public sanitized QA samples are stored in `artifacts/` and linked from the `QA Artifacts` section in `index.html`:
+- `sample-test-case.md`
+- `sample-bug-report.md`
+- `sample-api-test-scenario.md`
+- `sample-k6-summary.md`
+- `sample-release-checklist.md`
+
+Keep these documents free from confidential client names, real tokens, internal URLs, production data, and private repository details.
 
 ### Blog
 
-Edit blog cards in `index.html` (lines 224-250):
+Edit blog cards in `index.html`:
 - Add real blog posts or external links
 - Update titles, dates, and excerpts
 
 ### Contact Form
 
-The contact form (lines 254-275) currently shows a success message but doesn't send emails.
+The contact form is static-hosting friendly. It uses EmailJS directly from `js/main.js`, so it can run on GitHub Pages without a backend server. Client-side validation and a honeypot field are included for basic spam protection.
 
-To connect to a backend:
-1. Edit `js/main.js` (around line 120)
-2. Replace the success message with an actual API call
-3. Options: FormSpree, EmailJS, or your own backend
+If you do not want to expose EmailJS service/template IDs in a public repository, replace the form with direct LinkedIn/email CTA or move the email sending logic to a separate private backend.
 
 ### GitHub Links
 
-Update GitHub repository links in each project card:
-- Find `<a href="#" class="github-link"` in `index.html`
-- Replace `#` with your actual GitHub repository URLs
+Repository links are intentionally not shown for private company projects:
+- Keep the private-repository note for company projects
+- Add public GitHub links only for sanitized/demo QA artifacts
 
 ## Customization
 
@@ -115,11 +125,14 @@ Adjust spacing variables in `css/style.css`:
 
 ### GitHub Pages
 
-1. Create a GitHub repository
-2. Push your code
-3. Go to Settings > Pages
-4. Select main branch as source
-5. Your site will be live at `https://yourusername.github.io/repository-name`
+This portfolio is a static website. GitHub Pages can serve it directly; no Node, Python, backend, or long-running server is required.
+
+1. Push this repository to GitHub
+2. Go to Settings > Pages
+3. Select `Deploy from a branch`
+4. Choose branch `main` and folder `/ (root)`
+5. Save
+6. The site will be live from the GitHub Pages URL
 
 ### Netlify
 
@@ -185,4 +198,5 @@ Update your contact information in the footer and contact section.
 
 ---
 
-**Last Updated:** February 2026
+**Last Updated:** June 2026
+

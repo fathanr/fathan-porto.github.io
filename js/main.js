@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
     const header = document.getElementById('header');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-controls', 'primary-navigation');
+    navMenu.id = navMenu.id || 'primary-navigation';
 
     // ── UX #6: Nav backdrop ──
     const backdrop = document.createElement('div');
@@ -17,11 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.classList.add('active');
         navMenu.classList.add('active');
         backdrop.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
     }
     function closeMenu() {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
         backdrop.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 
     menuToggle.addEventListener('click', function() {
@@ -95,9 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 requestAnimationFrame(() => {
                     content.style.maxHeight = '0';
                     content.classList.remove('active');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
                 });
             } else {
                 content.classList.add('active');
+                toggleBtn.setAttribute('aria-expanded', 'true');
                 content.style.maxHeight = content.scrollHeight + 'px';
                 content.addEventListener('transitionend', function onEnd() {
                     content.style.maxHeight = 'none';
@@ -191,7 +198,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
+        const website = document.getElementById('website');
         let isValid = true;
+
+        if (website && website.value.trim()) {
+            formStatus.textContent = 'Submission blocked.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
+            return;
+        }
 
         document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
         document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('error'));
