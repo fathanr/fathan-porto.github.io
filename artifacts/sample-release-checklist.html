@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample Release Readiness Checklist | Fathan QA Evidence</title>
+  <meta name="description" content="Purpose: demonstrate how I review a release from QA perspective before production deployment. This checklist is sanitized and reusable for web/API projects." />
+  <link rel="stylesheet" href="artifact-style.css?v=html-1" />
+</head>
+<body>
+  <main class="artifact-shell">
+    <nav class="artifact-topbar" aria-label="Artifact navigation">
+      <a class="back-link" href="../index.html#artifacts">← Back to QA Evidence</a>
+      <span class="artifact-badge">Release QA</span>
+    </nav>
+    <article class="artifact-card">
+      <header class="artifact-hero">
+        <span class="artifact-badge">Sanitized Sample</span>
+        <h1>Sample Release Readiness Checklist</h1>
+        <p class="artifact-purpose">Purpose: demonstrate how I review a release from QA perspective before production deployment. This checklist is sanitized and reusable for web/API projects.</p>
+      </header>
+      <section class="artifact-content">
+        <h2>Functional Coverage</h2>
+<ul class="checklist"><li>Critical user journeys tested.</li><li>Regression checklist completed for impacted modules.</li><li>New feature acceptance criteria validated.</li><li>Negative and edge cases checked for high-risk flows.</li><li>Role and permission behavior verified.</li></ul>
+<h2>API and Integration Coverage</h2>
+<ul class="checklist"><li>Key API endpoints tested with valid and invalid payloads.</li><li>Integration points verified in QA/staging environment.</li><li>Error handling checked for failed dependency or invalid response.</li><li>API response status and frontend status are consistent.</li></ul>
+<h2>Automation and CI</h2>
+<ul class="checklist"><li>Automated regression suite executed.</li><li>Failed tests reviewed and classified.</li><li>Test data setup is documented.</li><li>CI result is attached or linked in release notes.</li></ul>
+<h2>Performance and Reliability</h2>
+<ul class="checklist"><li>Performance smoke/load test executed for impacted endpoints.</li><li>p95/p99 and error-rate thresholds reviewed.</li><li>No critical console errors found in main browser flows.</li><li>Monitoring/logging plan confirmed for release window.</li></ul>
+<h2>Defect and UAT Readiness</h2>
+<ul class="checklist"><li>Critical and high defects are resolved or formally accepted.</li><li>Known issues are documented with workaround and owner.</li><li>UAT feedback is reviewed.</li><li>Final QA sign-off includes environment, build, and evidence summary.</li></ul>
+<h2>Release Decision</h2>
+<p>Status: Ready / Ready with Known Issues / Not Ready</p>
+<p>QA notes:</p>
+<ul><li>Summarize blockers, risks, and evidence.</li><li>Include links to test result, bug report, and performance summary when available.</li></ul>
+      </section>
+    </article>
+    <footer class="artifact-footer">
+      <span>Fathan Ridlo · Quality Assurance Engineer</span>
+      <a href="../index.html#contact">Contact</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample Test Case: Enterprise Invoice Approval Flow | Fathan QA Evidence</title>
+  <meta name="description" content="Purpose: demonstrate how I structure functional and regression test cases for enterprise finance applications. This sample is sanitized and does not contain confidential client data." />
+  <link rel="stylesheet" href="artifact-style.css?v=html-1" />
+</head>
+<body>
+  <main class="artifact-shell">
+    <nav class="artifact-topbar" aria-label="Artifact navigation">
+      <a class="back-link" href="../index.html#artifacts">← Back to QA Evidence</a>
+      <span class="artifact-badge">Test Design</span>
+    </nav>
+    <article class="artifact-card">
+      <header class="artifact-hero">
+        <span class="artifact-badge">Sanitized Sample</span>
+        <h1>Sample Test Case: Enterprise Invoice Approval Flow</h1>
+        <p class="artifact-purpose">Purpose: demonstrate how I structure functional and regression test cases for enterprise finance applications. This sample is sanitized and does not contain confidential client data.</p>
+      </header>
+      <section class="artifact-content">
+        <h2>Scope</h2>
+<p>Feature: Invoice approval and revision workflow</p>
+<p>Platform: Web application with API-backed approval status</p>
+<p>Test type: Functional, integration, regression</p>
+<p>Priority: High</p>
+<p>Risk area: finance transaction accuracy, approval routing, audit trail</p>
+<h2>Preconditions</h2>
+<ul><li>QA environment is available and stable.</li><li>Tester has Maker, Approver, and Viewer roles.</li><li>Test invoice data uses dummy vendor, dummy PO, and dummy amount.</li><li>Required master data exists: company, department, vendor, tax code, approval matrix.</li></ul>
+<h2>Test Data</h2>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Vendor</td><td>QA Dummy Vendor</td></tr><tr><td>PO Number</td><td>QA-PO-0001</td></tr><tr><td>Invoice Number</td><td>QA-INV-0001</td></tr><tr><td>Amount</td><td>1,000,000 IDR</td></tr><tr><td>Attachment</td><td>dummy-invoice.pdf</td></tr></tbody></table></div>
+<h2>Test Scenarios</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Scenario</th><th>Steps</th><th>Expected Result</th><th>Priority</th></tr></thead><tbody><tr><td>TC-INV-001</td><td>Create invoice draft</td><td>Login as Maker, open Invoice module, fill mandatory fields, upload attachment, save draft</td><td>Draft invoice is created, status is Draft, audit log records creator</td><td>High</td></tr><tr><td>TC-INV-002</td><td>Submit invoice for approval</td><td>Open draft invoice and submit</td><td>Status changes to Waiting Approval, approver receives item in task list</td><td>High</td></tr><tr><td>TC-INV-003</td><td>Approver approves invoice</td><td>Login as Approver, review invoice detail, approve</td><td>Status changes to Approved, approval timestamp and approver are recorded</td><td>High</td></tr><tr><td>TC-INV-004</td><td>Approver requests revision</td><td>Login as Approver, add revision note, request revision</td><td>Status changes to Need Revision, Maker can edit permitted fields only</td><td>High</td></tr><tr><td>TC-INV-005</td><td>Reject invalid attachment</td><td>Upload unsupported file type or oversized file</td><td>System rejects upload with clear validation message</td><td>Medium</td></tr><tr><td>TC-INV-006</td><td>Validate search and filter</td><td>Filter invoices by status, vendor, and date range</td><td>Results match selected filters and no unrelated records appear</td><td>Medium</td></tr></tbody></table></div>
+<h2>Regression Checklist</h2>
+<ul><li>Approval status is consistent between list, detail, and API response.</li><li>Amount, tax, and vendor information do not change after approval.</li><li>Revision notes are visible to the correct role.</li><li>Attachment preview/download works for allowed users.</li><li>Unauthorized roles cannot approve or edit restricted fields.</li></ul>
+<h2>Evidence to Capture</h2>
+<ul><li>Screenshot of invoice list status.</li><li>Screenshot of detail page audit trail.</li><li>API response showing invoice status and approval metadata.</li><li>Defect link if actual result differs from expected result.</li></ul>
+      </section>
+    </article>
+    <footer class="artifact-footer">
+      <span>Fathan Ridlo · Quality Assurance Engineer</span>
+      <a href="../index.html#contact">Contact</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample K6 Performance Test Summary | Fathan QA Evidence</title>
+  <meta name="description" content="Purpose: demonstrate how I summarize performance test results and convert metrics into release-readiness decisions. This sanitized sample uses illustrative values only and does not contain confidential system data." />
+  <link rel="stylesheet" href="artifact-style.css?v=html-1" />
+</head>
+<body>
+  <main class="artifact-shell">
+    <nav class="artifact-topbar" aria-label="Artifact navigation">
+      <a class="back-link" href="../index.html#artifacts">← Back to QA Evidence</a>
+      <span class="artifact-badge">Performance</span>
+    </nav>
+    <article class="artifact-card">
+      <header class="artifact-hero">
+        <span class="artifact-badge">Sanitized Sample</span>
+        <h1>Sample K6 Performance Test Summary</h1>
+        <p class="artifact-purpose">Purpose: demonstrate how I summarize performance test results and convert metrics into release-readiness decisions. This sanitized sample uses illustrative values only and does not contain confidential system data.</p>
+      </header>
+      <section class="artifact-content">
+        <h2>Test Objective</h2>
+<p>Validate whether key API endpoints remain stable under expected concurrent usage and fail the pipeline when response-time or error-rate thresholds are exceeded.</p>
+<h2>Scenario</h2>
+<p>Application area: SAP-integrated finance API</p>
+<p>Test type: load test</p>
+<p>Tool: K6</p>
+<p>Duration: 10 minutes</p>
+<p>Virtual users: 50</p>
+<p>Endpoint group: authentication, master data, invoice list, notification list</p>
+<h2>Thresholds</h2>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Threshold</th><th>Reason</th></tr></thead><tbody><tr><td>http_req_failed</td><td>&lt; 1%</td><td>Keep user-facing failures low</td></tr><tr><td>http_req_duration p95</td><td>&lt; 1500 ms</td><td>Maintain responsive API behavior</td></tr><tr><td>http_req_duration p99</td><td>&lt; 3000 ms</td><td>Catch long-tail latency before release</td></tr><tr><td>checks</td><td>&gt; 99%</td><td>Ensure responses are valid, not only fast</td></tr></tbody></table></div>
+<h2>Sample Result</h2>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th><th>Status</th></tr></thead><tbody><tr><td>http_req_failed</td><td>0.32%</td><td>Pass</td></tr><tr><td>p95 response time</td><td>1.18 s</td><td>Pass</td></tr><tr><td>p99 response time</td><td>2.74 s</td><td>Pass</td></tr><tr><td>checks</td><td>99.4%</td><td>Pass</td></tr></tbody></table></div>
+<h2>Analysis</h2>
+<ul><li>The API passed the configured threshold for expected load.</li><li>p99 was close to the 3-second limit, so this endpoint should remain monitored in the next release.</li><li>No blocking release issue was found from this run.</li></ul>
+<h2>Follow-up Recommendation</h2>
+<ul><li>Repeat the same test after major backend or SAP integration changes.</li><li>Add separate stress test to identify breaking point.</li><li>Compare result trend across builds, not only one execution.</li></ul>
+      </section>
+    </article>
+    <footer class="artifact-footer">
+      <span>Fathan Ridlo · Quality Assurance Engineer</span>
+      <a href="../index.html#contact">Contact</a>
+    </footer>
+  </main>
+</body>
+</html>
