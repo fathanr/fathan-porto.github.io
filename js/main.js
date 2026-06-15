@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     progressBar.id = 'scroll-progress';
     document.body.prepend(progressBar);
 
+
     window.addEventListener('scroll', function() {
         // Progress bar
         const scrollTop = window.pageYOffset;
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (link.getAttribute('href') === '#' + current) link.classList.add('active');
         });
 
-        // ── UX #10: Back-to-top threshold 600px ──
+        // Back-to-top threshold 600px
         backToTop.classList.toggle('visible', scrollTop > 600);
     });
 
@@ -169,15 +170,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
     });
 
-    // Fade in animation on scroll
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    // Anime.js-inspired staged scroll reveals
+    document.body.classList.add('motion-ready');
+    const revealTargets = document.querySelectorAll([
+        'section:not(.hero) h2',
+        '.section-intro',
+        '.about > .container > p',
+        '.qa-proof-grid > *',
+        '.artifact-card',
+        '.case-study-card',
+        '.case-study-grid > *',
+        '.skill-category',
+        '.experience-item',
+        '.cert-item',
+        '.project-card',
+        '.blog-card',
+        '.contact-note',
+        '.contact-actions',
+        '.contact-form'
+    ].join(','));
 
-    document.querySelectorAll('.project-card, .blog-card, .skill-category').forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible', 'visible');
+                revealObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+        const revealGroups = new Map();
+        revealTargets.forEach(el => {
+            const group = el.parentElement || document.body;
+            const index = revealGroups.get(group) || 0;
+            revealGroups.set(group, index + 1);
+            el.style.setProperty('--reveal-index', Math.min(index, 8));
+            el.classList.add('anime-reveal', 'fade-in');
+            revealObserver.observe(el);
+        });
+    } else {
+        revealTargets.forEach(el => el.classList.add('is-visible', 'visible'));
+    }
 
     // ── UX #1: Image skeleton blur-up ──
     document.querySelectorAll('.project-thumbnail').forEach(img => {

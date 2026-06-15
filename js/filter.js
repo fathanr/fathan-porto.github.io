@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Filter projects
             projectCards.forEach(card => {
                 if (filterValue === 'all') {
-                    card.style.display = 'block';
+                    card.style.display = '';
                     setTimeout(() => {
                         card.style.opacity = '1';
                         card.style.transform = 'scale(1)';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const categories = card.getAttribute('data-category');
                     
                     if (categories.includes(filterValue)) {
-                        card.style.display = 'block';
+                        card.style.display = '';
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'scale(1)';
